@@ -348,35 +348,35 @@ a {
 }
 
 .projects__card:nth-child(1) {
-  background: url("/images/projects/01.jpg") center no-repeat;
+  background: url("../images/projects/01.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(2) {
-  background: url("/images/projects/02.jpg") center no-repeat;
+  background: url("../images/projects/02.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(3) {
-  background: url("/images/projects/03.jpg") center no-repeat;
+  background: url("../images/projects/03.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(4) {
-  background: url("/images/projects/04.jpg") center no-repeat;
+  background: url("../images/projects/04.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(5) {
-  background: url("/images/projects/05.jpg") center no-repeat;
+  background: url("../images/projects/05.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(6) {
-  background: url("/images/projects/06.jpg") center no-repeat;
+  background: url("../images/projects/06.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(7) {
-  background: url("/images/projects/07.jpg") center no-repeat;
+  background: url("../images/projects/07.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__card:nth-child(8) {
-  background: url("/images/projects/08.jpg") center no-repeat;
+  background: url("../images/projects/08.jpg") center no-repeat;
   background-size: cover;
 }
 .projects__hover {
