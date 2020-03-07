@@ -534,6 +534,7 @@
           var burger_line3 = document.getElementById("burger-line3");
           var burger_line4 = document.getElementById("burger-line4");
         function openMenu() {
+          document.body.classList.add("fixed");
           if (mobileMenu.className === "mobile") {
             mobileMenu.classList.add("responsive");
             burger_line1.classList.add("disp-none");
@@ -559,7 +560,8 @@
             mobileNav.classList.remove("opac-show");
           }  
         }
-        function closeMenu() {        
+        function closeMenu() {
+          document.body.removeAttribute("class");      
             mobileMenu.classList.remove("responsive");
             burger_line1.classList.remove("disp-none");
             burger_line2.classList.remove("rot-45");

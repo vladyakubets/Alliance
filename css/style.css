@@ -709,6 +709,9 @@ a[onclick="openMenu()"] {
 .fourth {
   top: 15px;
 }
+.fixed{
+  overflow: hidden;
+}
 
 .rot-45 {
   position: fixed;
