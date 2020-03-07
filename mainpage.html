@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="fonts/opensanscss/stylesheet.css" />
     <link rel="stylesheet" href="fonts/playfairdisplay/stylesheet.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
@@ -16,6 +16,31 @@
     <title>ALLIANCE</title>
   </head>
   <body>
+    <!-- MOBILE MENU -->
+    <div class="mobile" id="mobile-nav">
+      <div class="container">
+        <div class="mobile__menu"id="mobile-blur">
+          <div class="menu-wrap" id="mobile-wrap">
+            <nav>
+              <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
+              <a class="navbar__link" href="#">Кадастровые работы 
+              </a>
+              <a class="navbar__link" href="#">Согласование в КГА, КГИОП, ГКУ 
+                Имущество Санкт-Петербурга</a>
+              <a class="navbar__link" href="#">Согласование перепланировок </a>
+              <a class="navbar__link" href="#">Проектные работы. Реконструкция 
+                объектов недвижимости</a>
+              <a class="navbar__link" href="#">ПРОЕКТЫ</a>
+              <a class="navbar__link" href="#">СТАТЬИ</a>
+              <a class="navbar__link" href="#">О КОМПАНИИ</a>
+              <a class="navbar__link" href="#">КОНТАКТЫ</a>
+            </nav>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <!-- END MOBILE MENU -->
     <!-- HEADER -->
     <div class="header">
       <div class="container">
@@ -24,8 +49,8 @@
             <div class="header__logo">
               <a href="mainpage.html">
                 <img
-                class="fl"
-                src="images/icons/logo1.png"
+                class="logotype"
+                src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
                 alt="Alliance logo"
               />
               </a>
@@ -40,30 +65,45 @@
                   <i class="down-arrow"></i>
                 </a>
                 <div class="dropdown-content">
-                  <a href="#">линк 1</a>
-                  <a href="#">линк 2</a>
-                  <a href="#">линк 3</a>
+                  <a href="#">Кадастровые работы 
+                  </a>
+                  <a href="#">Согласование в КГА, КГИОП, ГКУ 
+                    Имущество Санкт-Петербурга</a>
+                  <a href="#">Согласование перепланировок </a>
+                  <a href="#">Проектные работы. Реконструкция 
+                    объектов недвижимости</a>
                 </div>
                 </div>
                 
-                <a class="navbar__link" href="">ПРОЕКТЫ</a>
-                <a class="navbar__link" href="">СТАТЬИ</a>
-                <a class="navbar__link" href="">О КОМПАНИИ</a>
-                <a class="navbar__link" href="">КОНТАКТЫ</a>
+                <a class="navbar__link" href="#">ПРОЕКТЫ</a>
+          <a class="navbar__link" href="#">СТАТЬИ</a>
+          <a class="navbar__link" href="#">О КОМПАНИИ</a>
+          <a class="navbar__link" href="#">КОНТАКТЫ</a>
               </nav>
             </div>
           </div>
           <div class="header__right d-flex">
             <a class="tender__button" href="#">пригласить в тендер</a>
             <div class="header__contacts d-flex">
-              <img
+              
+              <a target="_blank" href="tel:88129220868"
+                ><img
                 class="header__phone fl"
-                src="images/icons/phoneicon.png"
+                src="images/icons/phone-call.svg"
+                href="tel:88129220868"
                 alt="phone icon"
-              />
+              /></a
+              >
               <a target="_blank" href="tel:88129220868"
                 >8 (812) <span>922-08-68</span></a
-              >
+                >
+                <a href="javascript:void(0);" onclick="myFunction()">
+                  <div class="burger-line first" id="line1"></div>
+              <div class="burger-line second" id="line2"></div>
+              <div class="burger-line third" id="line3"></div>
+              <div class="burger-line fourth" id="line4"></div>
+                </a>
+              
             </div>
           </div>
         </div>
@@ -180,7 +220,7 @@
         <div class="projects__header">
           <h3 class="projects__title">Реализованные проекты</h3>
         </div>
-      </div>
+      
       <div class="projects__gallery d-flex">
         <!-- Item  -->
         <div class="projects__card">
@@ -294,7 +334,7 @@
             </div>
           </div>
         </div>
-       
+      </div>
         </div>
       </div>
     </div>
@@ -369,12 +409,15 @@
           <div class="form__container d-flex">
             <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
             <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
-            <select class="form__select" id="service" name="service">
-              <option selected disabled hidden>Услуга*</option>
-              <option value="au">Australia</option>
-              <option value="ca">Canada</option>
-              <option value="usa">USA</option>
-            </select>
+            <div class="select__wrap">
+              <select class="form__select" id="service" name="service">
+                <option selected disabled hidden>Услуга*</option>
+                <option value="au">Australia</option>
+                <option value="ca">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+              <i class="down-arrow select-arrow"></i>
+            </div>
             <button class="form__button" type="submit">Отправить заявку</button>
           </div>
           
@@ -388,20 +431,20 @@
         <div class="contacts__container d-flex">
           <div class="contacts__inner">
             <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="/images/icons/phoneicon.png" alt="">
+              <img class="header__phone fl" src="/images/icons/phone-call.svg" alt=" calling phone">
             <p class="contacts__phone">8 (812) 922-08-68</p>
             </div>
             <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="/images/icons/pin.png" alt="">
+              <img class="header__phone fl" src="/images/icons/pin.svg" alt=" map pin">
             <p>г. Санкт-Петербург, Приморский 
               пр-к, 14, пом. 6М</p>
             </div>
             <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="/images/icons/clock.png" alt="">
+              <img class="header__phone fl" src="/images/icons/clock.svg" alt="clock">
             <p>9:00-18:00</p>
             </div>
             <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="images/icons/message.png" alt="">
+              <img class="header__phone fl" src="images/icons/mail.svg" alt="mail">
             <p>st.alliance.group@gmail.com</p>
             </div>
             <a class="tender__button" href="#">пригласить в тендер</a>
@@ -437,7 +480,7 @@
             <a href="mainpage.html">
               <img
               class=""
-              src="images/icons/footer_logo.png"
+              src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
               alt="Alliance logo"
             />
             </a>
@@ -446,10 +489,84 @@
           <p class="footer__text">ООО «Альянс» - команда квалифицированных специалистов, оказывающих следующие виды услуг: кадастровые работы, разработка и согласование проектной документации,
             технического обследования зданий и сооружений. В основе нашей работы лежат принципы открытого диалога и честотности, взяв на себя обязательства перед заказчиком, 
             мы выдаем на конечном этапе качественный «продукт», отвечая свой репутацией. </p>
+            
         </div>
-      </div>
+        <div class="header__inner d-flex">
+          <div class="header__left d-flex">
+            <div class="header__logo">
+              <a href="mainpage.html">
+                <img
+                class="logotype"
+                src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
+                alt="Alliance logo"
+              />
+              </a>
+              
+            </div>
+        </div>
+        <div class="header__right d-flex">
+          <a class="tender__button" href="#">пригласить в тендер</a>
+          <div class="header__contacts d-flex">
+            
+            <a target="_blank" href="tel:88129220868"
+              ><img
+              class="header__phone fl"
+              src="images/icons/phone-call.svg"
+              href="tel:88129220868"
+              alt="phone icon"
+            /></a
+            >
+    </div>
+        </div>
+        </div>
+    </div>
     </div>
     <!-- END FOOTER  -->
+<script>
+        function myFunction() {
+          var x = document.getElementById("mobile-nav");
+          var y = document.getElementById("mobile-blur");
+          var z = document.getElementById("mobile-wrap");
+          var line1 = document.getElementById("line1");
+          var line2 = document.getElementById("line2");
+          var line3 = document.getElementById("line3");
+          var line4 = document.getElementById("line4");
 
+
+          if (x.className === "mobile") {
+            x.className += " responsive";
+            line1.className += " disp-none";
+            line2.className += " rot-45"
+            line3.className += " rot--45"
+            line4.className += " disp-none"
+            
+          } else {
+            x.className = "mobile";
+            line1.className = "burger-line first";
+            line2.className = "burger-line second"
+            line3.className = "burger-line third"
+            line4.className = "burger-line fourth"
+          }
+          if (y.className === "mobile__menu") {
+            y.className += " opac-show";
+          } else {
+            y.className = "mobile__menu";
+          }
+          if (z.className === "menu-wrap") {
+            z.className += " opac-show";
+          } else {
+            z.className = "menu-wrap";
+          }
+          y.addEventListener("click", function(){
+            if (y.className === "opac-show"){
+              x.className = "mobile";
+              y.className = "mobile__menu";
+              z.className = "menu-wrap";
+            }
+          })
+          
+    
+        }
+        </script>
   </body>
 </html>
