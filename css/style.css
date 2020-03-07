@@ -648,6 +648,108 @@ a {
   font-size: 11px;
   color: #6d6d6d;
 }
+/* POPUP WINDOW */
+
+/*-------------------------------------------------------*/
+
+.close {
+  position: absolute;
+  right: 23px;
+  top: 23px;
+  width: 23px;
+  height: 23px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 10px;
+  content: " ";
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+div.popup-window-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup{
+  position: fixed;
+  z-index: 5;
+  display: none;
+}
+.popup__blur{
+  width:100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-window {
+  position: fixed;
+  top: calc((100% - 600px)/2);
+  left: calc((100% - 465px)/2);
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 999;
+  
+}
+
+.popup-window__form {
+  padding-top: 50px;
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  align-items: center;
+  height: 100%;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.popup-window__form label{
+  color: black;
+}
+.popup-window__form input{
+  color: black;
+  background-color: white;
+}
+.popup-window__form button{
+  color: black;
+  background-color: white;
+  height: 45px;
+}
+
+/*--------------------MOBILE NAVBAR------------------*/
 
 
 

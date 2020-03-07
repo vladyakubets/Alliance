@@ -16,12 +16,30 @@
     <title>ALLIANCE</title>
   </head>
   <body>
+    <!-- POPUP TENDER-->
+    <div class="popup">
+      <div class="popup__blur">
+        <div class="popup-window">
+          <form action="" class="popup-window__form">
+            <a href="#" class="close"></a>
+            <label class="form__label">Хочу с вами работать</label>
+            <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
+            <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
+            <textarea name="about__tender" id="about__tender" cols="30" rows="10"></textarea>
+            <button class="form__button" type="submit">Отправить заявку</button>
+            <p>отправляя заявку</p>
+          </form>
+      </div>
+      </div>
+    </div>
+    
+    
     <!-- MOBILE MENU -->
     <div class="mobile" id="mobile-nav">
       <div class="container">
-        <div class="mobile__menu"id="mobile-blur" onclick="closeMenu()">
+        <div class="mobile__menu"id="mobile-blur" onclick="closeMenu(event)">
           <div class="menu-wrap" id="mobile-wrap">
-            <nav>
+            <nav class="navbar">
               <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
               <a class="navbar__link" href="#">Кадастровые работы 
               </a>
@@ -560,7 +578,10 @@
             mobileNav.classList.remove("opac-show");
           }  
         }
-        function closeMenu() {
+        function closeMenu(e) {
+         if(e.target.classList.contains("navbar")){
+          return;
+         }         
           document.body.removeAttribute("class");      
             mobileMenu.classList.remove("responsive");
             burger_line1.classList.remove("disp-none");
