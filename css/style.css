@@ -45,6 +45,7 @@ a {
 .header__logo {
   margin-right: 49px;
   height: 33px;
+  width: 85px;
   border-color: red;
   position: relative;
 }
@@ -70,7 +71,7 @@ a {
 }
 
 .navbar__link {
-  margin: 30px 15px;
+  padding: 15px;
   font-weight: 400;
   font-size: 12px;
   text-transform: uppercase;
@@ -78,8 +79,8 @@ a {
 }
 .down-arrow {
   position: absolute;
-  top: 5px;
-  right: -8px;
+  top: 19px;
+  right: 7px;
   border: solid #c7c7c8;
   border-width: 0 1px 1px 0;
   display: inline-block;
