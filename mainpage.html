@@ -19,7 +19,7 @@
     <!-- MOBILE MENU -->
     <div class="mobile" id="mobile-nav">
       <div class="container">
-        <div class="mobile__menu"id="mobile-blur">
+        <div class="mobile__menu"id="mobile-blur" onclick="closeMenu()">
           <div class="menu-wrap" id="mobile-wrap">
             <nav>
               <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
@@ -30,6 +30,10 @@
               <a class="navbar__link" href="#">Согласование перепланировок </a>
               <a class="navbar__link" href="#">Проектные работы. Реконструкция 
                 объектов недвижимости</a>
+              <a class="navbar__link" href="#">ПРОЕКТЫ</a>
+              <a class="navbar__link" href="#">СТАТЬИ</a>
+              <a class="navbar__link" href="#">О КОМПАНИИ</a>
+              <a class="navbar__link" href="#">КОНТАКТЫ</a>
               <a class="navbar__link" href="#">ПРОЕКТЫ</a>
               <a class="navbar__link" href="#">СТАТЬИ</a>
               <a class="navbar__link" href="#">О КОМПАНИИ</a>
@@ -97,11 +101,11 @@
               <a target="_blank" href="tel:88129220868"
                 >8 (812) <span>922-08-68</span></a
                 >
-                <a href="javascript:void(0);" onclick="myFunction()">
-                  <div class="burger-line first" id="line1"></div>
-              <div class="burger-line second" id="line2"></div>
-              <div class="burger-line third" id="line3"></div>
-              <div class="burger-line fourth" id="line4"></div>
+                <a href="javascript:void(0);" onclick="openMenu()">
+                  <div class="burger-line first" id="burger-line1"></div>
+              <div class="burger-line second" id="burger-line2"></div>
+              <div class="burger-line third" id="burger-line3"></div>
+              <div class="burger-line fourth" id="burger-line4"></div>
                 </a>
               
             </div>
@@ -523,49 +527,50 @@
     </div>
     <!-- END FOOTER  -->
 <script>
-        function myFunction() {
-          var x = document.getElementById("mobile-nav");
-          var y = document.getElementById("mobile-blur");
-          var z = document.getElementById("mobile-wrap");
-          var line1 = document.getElementById("line1");
-          var line2 = document.getElementById("line2");
-          var line3 = document.getElementById("line3");
-          var line4 = document.getElementById("line4");
-
-
-          if (x.className === "mobile") {
-            x.className += " responsive";
-            line1.className += " disp-none";
-            line2.className += " rot-45"
-            line3.className += " rot--45"
-            line4.className += " disp-none"
+  var mobileMenu = document.getElementById("mobile-nav");
+          var backgroundBlur = document.getElementById("mobile-blur");
+          var mobileNav = document.getElementById("mobile-wrap");
+           
+          var mobileNav = document.getElementById("mobile-wrap");
+          var burger_line1 = document.getElementById("burger-line1");
+          var burger_line2 = document.getElementById("burger-line2");
+          var burger_line3 = document.getElementById("burger-line3");
+          var burger_line4 = document.getElementById("burger-line4");
+        function openMenu() {
+          if (mobileMenu.className === "mobile") {
+            mobileMenu.classList.add("responsive");
+            burger_line1.classList.add("disp-none");
+            burger_line2.classList.add("rot-45");
+            burger_line3.classList.add("rot--45");
+            burger_line4.classList.add("disp-none");
             
           } else {
-            x.className = "mobile";
-            line1.className = "burger-line first";
-            line2.className = "burger-line second"
-            line3.className = "burger-line third"
-            line4.className = "burger-line fourth"
+            mobileMenu.classList.remove("responsive");
+            burger_line1.classList.remove("disp-none");
+            burger_line2.classList.remove("rot-45");
+            burger_line3.classList.remove("rot--45");
+            burger_line4.classList.remove("disp-none");
           }
-          if (y.className === "mobile__menu") {
-            y.className += " opac-show";
+          if (backgroundBlur.className === "mobile__menu") {
+            backgroundBlur.classList.add("opac-show");
           } else {
-            y.className = "mobile__menu";
+            backgroundBlur.classList.remove("opac-show");
           }
-          if (z.className === "menu-wrap") {
-            z.className += " opac-show";
+          if (mobileNav.className === "menu-wrap") {
+            mobileNav.classList.add("opac-show");
           } else {
-            z.className = "menu-wrap";
-          }
-          y.addEventListener("click", function(){
-            if (y.className === "opac-show"){
-              x.className = "mobile";
-              y.className = "mobile__menu";
-              z.className = "menu-wrap";
-            }
-          })
+            mobileNav.classList.remove("opac-show");
+          }  
+        }
+        function closeMenu() {        
+            mobileMenu.classList.remove("responsive");
+            burger_line1.classList.remove("disp-none");
+            burger_line2.classList.remove("rot-45");
+            burger_line3.classList.remove("rot--45");
+            burger_line4.classList.remove("disp-none");
+            backgroundBlur.classList.remove("opac-show");
+            mobileNav.classList.remove("opac-show");
           
-    
         }
         </script>
   </body>
