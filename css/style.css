@@ -285,7 +285,7 @@ a {
   width: 18px;
   position: absolute;
   top: -4px;
-  left: 49%;
+  left: calc((100% - 18px) / 2);
 }
 /*----------------------END GALLERY-------------------------------*/
 /*----------------------LICENCES-------------------------------*/
@@ -686,6 +686,7 @@ a {
 }
 
 div.tender-active {
+  display: block;
   opacity: 1;
   z-index: 5;
 }
@@ -694,6 +695,7 @@ div.tender-active {
   position: fixed;
   width: 100vw;
   height: 100vh;
+  display: none;
   z-index: 0;
   opacity: 0;
   transition: 0.3s all;
@@ -705,10 +707,14 @@ div.tender-active {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.window-zindex {
+  z-index: 10;
+}
+
 .popup-window {
   position: absolute;
   top: calc((100% - 600px) / 2);
-  left: calc((100% - 465px) / 2);
+  left: calc((100% - 400px) / 2);
   width: 100%;
   max-width: 400px;
   height: max-content;
@@ -722,11 +728,10 @@ div.tender-active {
 
 .popup-window__form {
   position: relative;
-  padding-top: 50px;
+  padding: 50px;
   background: #fff;
   width: 100%;
   max-width: 400px;
-  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -759,8 +764,6 @@ div.tender-active {
 }
 .popup-window__form #about__tender::placeholder {
   color: black;
-  text-align: center;
-  padding-top: 10px;
 }
 
 .popup-window__form p {
@@ -833,7 +836,6 @@ a[onclick="openMenu()"] {
 }
 .overflow {
   overflow: hidden;
-  padding-right: 17px;
 }
 
 .rot-45 {
@@ -938,7 +940,7 @@ div.responsive {
     flex-direction: column;
   }
   .licences__inner {
-    padding: 15px;
+    padding: 15px 23px 25px;
   }
 
   .activity {
@@ -956,6 +958,7 @@ div.responsive {
   }
   .licences__gallery a img {
     width: 110px;
+    height: 160px;
     object-fit: contain;
   }
   .projects__title {
@@ -970,24 +973,163 @@ div.responsive {
   }
 }
 @media screen and (max-width: 425px) {
+  .projects__hover .card__text {
+    margin-top: 6px;
+  }
+  .projects__card {
+    width: 475px;
+    height: 215px;
+  }
+  .background__blur {
+    opacity: 1;
+  }
+  .projects__hover .card__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .projects__hover {
+    padding: 30px 10px;
+  }
+  .projects__header {
+    position: relative;
+    border-top: 1px solid #626262;
+    margin-bottom: 60px;
+  }
+  .projects__title {
+    left: calc((100% - 184px) / 2);
+    max-width: 184px;
+    top: -37px;
+    font-size: 20px;
+  }
+  .projects {
+    margin-top: 60px;
+  }
+  .infogallery {
+    margin-top: 5px;
+  }
+  .title__inner h1 {
+    letter-spacing: 1px;
+    font-size: 13px;
+    text-align: left;
+  }
   .tender__button {
-    padding: 5px;
-    margin-right: 10px;
+    min-width: 90px;
+    height: 20px;
+
+    font-size: 6px;
+    padding: 0;
+    line-height: 19px;
+
+    margin-right: 28px;
+  }
+  .card__text {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #fafafa;
+    font-size: 12px;
+  }
+  .card__price {
+    font-size: 9px;
+  }
+  .projects__hover .card__price {
+    font-size: 9px;
+    margin-top: 20px;
+  }
+  .card__title {
+    position: relative;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    line-height: 1.1;
+    color: #fafafa;
+  }
+  .licences {
+    margin-top: 34px;
+  }
+  .licences__title {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .header__phone {
+    margin-right: 22px;
+  }
+  .licences__text {
+    color: #e0e0e0;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .title__inner {
+    border: 1px solid #dddddd;
+    padding: 0 15px;
   }
   .footer .tender__button {
-    margin-right: 18px;
+    margin-right: 22px;
   }
   .header__contacts a:first-of-type {
     margin-right: 0px;
   }
-  .projects__title {
-    left: calc((100% - 215px) / 2);
-    max-width: 215px;
-    top: -55px;
+  .clients__header {
+    margin-bottom: 40px;
   }
-  .clients__title {
-    left: calc((100% - 215px) / 2);
-    max-width: 215px;
-    top: -43px;
+  .client__wrap img {
+    width: 100px;
+    height: 30px;
+    object-fit: contain;
+  }
+  .contacts__wrap p {
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .contacts__inner .tender__button {
+    margin-top: 10px;
+    display: block;
+    height: 30px;
+    line-height: 28px;
+    font-size: 10px;
+  }
+  .vertical-divider {
+    margin-bottom: 5px;
+  }
+  .activity a,
+  .articles a {
+    font-size: 13px;
+  }
+  .footer__inner {
+    padding: 18px 0px;
+  }
+  .info-wrap {
+    min-height: 100px;
+  }
+  .footer .header__contacts img{
+    margin-right: 0px;
+  }
+  .form__label {
+    font-size: 20px;
+  }
+  .form__inner {
+    background-color: #212029;
+    margin-top: 35px;
+    min-height: 200px;
+  }
+  .form__button {
+    margin-top: 30px;
+  }
+  .popup-window__form {
+    max-width: none;
+  }
+  .popup-window {
+    max-width: none;
+    left: 0;
+  }
+  .overflow {
+    padding-right: 0;
+  }
+  .header__logo {
+    width: 83px;
   }
 }

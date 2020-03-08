@@ -19,15 +19,15 @@
     <!-- POPUP TENDER-->
     <div class="popup" id="tender">
       <div class="popup__blur" onclick="closeTender(event)">
-        <div class="popup-window">
-          <form action="" class="popup-window__form">
+        <div class="popup-window" >
+          <form action="" class="popup-window__form" id="popup-window">
             <a href="#" class="close" onclick="closeTender(event)"></a>
             <label class="form__label">Хочу с вами работать</label>
             <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
             <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
-            <textarea name="about__tender" id="about__tender" cols="30" rows="10" placeholder="Расскажите о тендере*"></textarea>
+            <textarea name="about__tender"  class="about__tender" id="about__tender" cols="30" rows="10" placeholder="Расскажите о тендере*"></textarea>
             <button class="form__button" type="submit">Отправить заявку</button>
-            <p>отправляя заявку</p>
+            <p class="tender__message">отправляя заявку</p>
           </form>
       </div>
       </div>
@@ -105,7 +105,7 @@
             <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
             <div class="header__contacts d-flex">
               
-              <a target="_blank" href="tel:88129220868"
+              <a target="_self" href="tel:88129220868"
                 ><img
                 class="header__phone fl"
                 src="images/icons/phone-call.svg"
@@ -113,7 +113,7 @@
                 alt="phone icon"
               /></a
               >
-              <a target="_blank" href="tel:88129220868"
+              <a target="_self" href="tel:88129220868"
                 >8 (812) <span>922-08-68</span></a
                 >
                 <a href="javascript:void(0);" onclick="openMenu()" id="menu-icon">
@@ -148,10 +148,12 @@
           <div class="infogallery__card">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
-                <h2 class="card__title">Кадастровые работы</h2>
-                <p class="card__text">
-                  Стоимость работ рассчитывается индивидуально
-                </p>
+                <div class="info-wrap">
+                  <h2 class="card__title">Кадастровые работы</h2>
+                  <p class="card__text">
+                    Стоимость работ рассчитывается индивидуально
+                  </p>
+                </div>
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
@@ -161,10 +163,13 @@
           <div class="infogallery__card">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
-                <h2 class="card__title">Согласование в КГА, КГИОП, ГКУ</h2>
-                <p class="card__text">
-                  Имущество Санкт-Петербурга
-                </p>
+                <div class="info-wrap">
+                  <h2 class="card__title">Согласование в КГА, КГИОП, ГКУ</h2>
+                  <p class="card__text">
+                    Имущество Санкт-Петербурга
+                  </p>
+                </div>
+                
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
@@ -174,10 +179,13 @@
           <div class="infogallery__card">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
-                <h2 class="card__title">Согласование перепланировок</h2>
-                <p class="card__text">
-                  Стоимость работ по согласованию перепланировок
-                </p>
+                <div class="info-wrap">
+                  <h2 class="card__title">Согласование перепланировок</h2>
+                  <p class="card__text">
+                    Стоимость работ по согласованию перепланировок
+                  </p>
+                </div>
+                
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
@@ -187,12 +195,15 @@
           <div class="infogallery__card">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
-                <h2 class="card__title">
-                  Проектыне работы. Реконструкция объектов недвижимости
-                </h2>
-                <p class="card__text">
-                  Стоимость работ рассчитывается индивидуально
-                </p>
+                <div class="info-wrap">
+                  <h2 class="card__title">
+                    Проектыне работы. Реконструкция объектов недвижимости
+                  </h2>
+                  <p class="card__text">
+                    Стоимость работ рассчитывается индивидуально
+                  </p>
+                </div>
+                
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
@@ -527,7 +538,7 @@
           <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
           <div class="header__contacts d-flex">
             
-            <a target="_blank" href="tel:88129220868"
+            <a target="_self" href="tel:88129220868"
               ><img
               class="header__phone fl"
               src="images/icons/phone-call.svg"
@@ -551,6 +562,8 @@
           var burger_line4 = document.getElementById("burger-line4");
 
           var tender = document.getElementById("tender");
+          var tender_form = document.getElementById("popup-window");
+          
 
         function openMenu() {
           document.body.classList.add("fixed");
@@ -602,9 +615,22 @@
           
           document.body.classList.add("overflow");      
           tender.classList.add("tender-active");
+          
         }
 
         function closeTender(e) {
+         
+          var elementChildrens = tender_form.children;
+          for (var i=0, child; child=elementChildrens[i]; i++) {
+                if(e.target.className === "close"){
+                  
+                  break;
+                }
+                if((child.className === e.target.className) || (e.target.className === "popup-window__form")){
+                  
+                  return;
+                }
+          }
           document.body.classList.remove("overflow");      
           tender.classList.remove("tender-active");
         }
