@@ -17,15 +17,15 @@
   </head>
   <body>
     <!-- POPUP TENDER-->
-    <div class="popup">
-      <div class="popup__blur">
+    <div class="popup" id="tender">
+      <div class="popup__blur" onclick="closeTender(event)">
         <div class="popup-window">
           <form action="" class="popup-window__form">
-            <a href="#" class="close"></a>
+            <a href="#" class="close" onclick="closeTender(event)"></a>
             <label class="form__label">Хочу с вами работать</label>
             <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
             <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
-            <textarea name="about__tender" id="about__tender" cols="30" rows="10"></textarea>
+            <textarea name="about__tender" id="about__tender" cols="30" rows="10" placeholder="Расскажите о тендере*"></textarea>
             <button class="form__button" type="submit">Отправить заявку</button>
             <p>отправляя заявку</p>
           </form>
@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="header__right d-flex">
-            <a class="tender__button" href="#">пригласить в тендер</a>
+            <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
             <div class="header__contacts d-flex">
               
               <a target="_blank" href="tel:88129220868"
@@ -116,10 +116,10 @@
               <a target="_blank" href="tel:88129220868"
                 >8 (812) <span>922-08-68</span></a
                 >
-                <a href="javascript:void(0);" onclick="openMenu()">
+                <a href="javascript:void(0);" onclick="openMenu()" id="menu-icon">
                   <div class="burger-line first" id="burger-line1"></div>
-              <div class="burger-line second" id="burger-line2"></div>
-              <div class="burger-line third" id="burger-line3"></div>
+              <div class="burger-line second" id="burger-line2" ></div>
+              <div class="burger-line third" id="burger-line3" ></div>
               <div class="burger-line fourth" id="burger-line4"></div>
                 </a>
               
@@ -466,7 +466,7 @@
               <img class="header__phone fl" src="images/icons/mail.svg" alt="mail">
             <p>st.alliance.group@gmail.com</p>
             </div>
-            <a class="tender__button" href="#">пригласить в тендер</a>
+            <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
           </div>
           <div class="vertical-divider"></div>
         <div class="activity">
@@ -545,39 +545,44 @@
   var mobileMenu = document.getElementById("mobile-nav");
           var backgroundBlur = document.getElementById("mobile-blur");
           var mobileNav = document.getElementById("mobile-wrap");
-           
-          var mobileNav = document.getElementById("mobile-wrap");
           var burger_line1 = document.getElementById("burger-line1");
           var burger_line2 = document.getElementById("burger-line2");
           var burger_line3 = document.getElementById("burger-line3");
           var burger_line4 = document.getElementById("burger-line4");
+
+          var tender = document.getElementById("tender");
+
         function openMenu() {
           document.body.classList.add("fixed");
-          if (mobileMenu.className === "mobile") {
-            mobileMenu.classList.add("responsive");
-            burger_line1.classList.add("disp-none");
-            burger_line2.classList.add("rot-45");
-            burger_line3.classList.add("rot--45");
-            burger_line4.classList.add("disp-none");
-            
-          } else {
+          if (mobileMenu.classList.contains("responsive")) {
+
             mobileMenu.classList.remove("responsive");
             burger_line1.classList.remove("disp-none");
             burger_line2.classList.remove("rot-45");
             burger_line3.classList.remove("rot--45");
             burger_line4.classList.remove("disp-none");
-          }
-          if (backgroundBlur.className === "mobile__menu") {
-            backgroundBlur.classList.add("opac-show");
+            
+            
           } else {
+            
+            mobileMenu.classList.add("responsive");
+            burger_line1.classList.add("disp-none");
+            burger_line2.classList.add("rot-45");
+            burger_line3.classList.add("rot--45");
+            burger_line4.classList.add("disp-none");
+          }
+          if (backgroundBlur.classList.contains("opac-show")) {
             backgroundBlur.classList.remove("opac-show");
-          }
-          if (mobileNav.className === "menu-wrap") {
-            mobileNav.classList.add("opac-show");
           } else {
+            backgroundBlur.classList.add("opac-show");
+          }
+          if (mobileNav.classList.contains("opac-show")) {
             mobileNav.classList.remove("opac-show");
+          } else {
+            mobileNav.classList.add("opac-show");
           }  
         }
+
         function closeMenu(e) {
          if(e.target.classList.contains("navbar")){
           return;
@@ -592,6 +597,18 @@
             mobileNav.classList.remove("opac-show");
           
         }
+
+        function openTender(e) {
+          
+          document.body.classList.add("overflow");      
+          tender.classList.add("tender-active");
+        }
+
+        function closeTender(e) {
+          document.body.classList.remove("overflow");      
+          tender.classList.remove("tender-active");
+        }
+        
         </script>
   </body>
 </html>

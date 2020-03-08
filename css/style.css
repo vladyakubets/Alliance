@@ -99,6 +99,7 @@ a {
 }
 
 .dropdown-content {
+  display: none;
   opacity: 0;
   position: absolute;
   left: 0;
@@ -109,7 +110,7 @@ a {
   background-color: #1b1a20;
   min-width: 330px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: ;
   transition: 0.2s linear;
 }
 
@@ -127,7 +128,8 @@ a {
 }
 
 .dropdown:hover .dropdown-content {
-  /*display: block;*/
+  display: block;
+  z-index: 1;
   opacity: 1;
 }
 
@@ -683,78 +685,94 @@ a {
   transform: rotate(-45deg);
 }
 
-div.popup-window-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+div.tender-active {
+  opacity: 1;
+  z-index: 5;
 }
 
-.popup{
+.popup {
   position: fixed;
-  z-index: 5;
-  display: none;
-}
-.popup__blur{
-  width:100vw;
+  width: 100vw;
   height: 100vh;
-  z-index: 5;
+  z-index: 0;
+  opacity: 0;
+  transition: 0.3s all;
+}
+.popup__blur {
+  width: 100%;
+  height: 100%;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .popup-window {
-  position: fixed;
-  top: calc((100% - 600px)/2);
-  left: calc((100% - 465px)/2);
+  position: absolute;
+  top: calc((100% - 600px) / 2);
+  left: calc((100% - 465px) / 2);
   width: 100%;
-  height: 100%;
+  max-width: 400px;
+  height: max-content;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 999;
-  
 }
 
 .popup-window__form {
+  position: relative;
   padding-top: 50px;
   background: #fff;
   width: 100%;
   max-width: 400px;
-  position: relative;
   padding-bottom: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   align-items: center;
   height: 100%;
   max-height: 600px;
   overflow: hidden;
 }
 
-.popup-window__form label{
+.popup-window__form label {
   color: black;
 }
-.popup-window__form input{
+.popup-window__form .form__input::placeholder {
   color: black;
+}
+.popup-window__form .form__input {
   background-color: white;
+  border-bottom: 1px solid black;
 }
-.popup-window__form button{
+.popup-window__form button {
   color: black;
   background-color: white;
   height: 45px;
+  border: 1px solid black;
+  max-width: 200px;
+}
+
+.popup-window__form #about__tender {
+  border: 1px solid black;
+  color: black;
+}
+.popup-window__form #about__tender::placeholder {
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.popup-window__form p {
+  color: black;
 }
 
 /*--------------------MOBILE NAVBAR------------------*/
 
-
-
 .mobile {
+  display: none;
   opacity: 0;
+  z-index: -1;
 }
 
 .mobile__menu {
@@ -762,9 +780,9 @@ div.popup-window-active {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 10;
+  z-index: -1;
   opacity: 0;
-  transition: 0.3s all;
+  transition: 0.5s all;
 }
 
 a[onclick="openMenu()"] {
@@ -776,16 +794,15 @@ a[onclick="openMenu()"] {
   opacity: 0;
   max-width: 260px;
   height: 100%;
-  z-index: 21;
+  z-index: -1;
   background-color: #1b1a22;
-  transition: 0.3s all;
-  overflow:scroll;
+  transition: 0.5s all;
+  overflow: scroll;
 }
 
 .mobile__menu nav {
   padding: 20px 15px;
   height: 100%;
-  z-index: 21;
 }
 .mobile__menu nav a {
   display: block;
@@ -799,8 +816,8 @@ a[onclick="openMenu()"] {
   width: 20px;
   height: 2px;
   background-color: #e0e0e0;
-  z-index: 21;
-  transition: 0.3s all;
+  z-index: 0;
+  transition: 0.4s all;
 }
 
 .second,
@@ -811,22 +828,22 @@ a[onclick="openMenu()"] {
 .fourth {
   top: 15px;
 }
-.fixed{
+.fixed {
   overflow: hidden;
+}
+.overflow {
+  overflow: hidden;
+  padding-right: 17px;
 }
 
 .rot-45 {
-  position: fixed;
-  top: 33px;
-  right: 18px;
+  z-index: 5;
   transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
 }
 .rot--45 {
-  position: fixed;
-  top: 33px;
-  right: 18px;
+  z-index: 5;
   transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -838,10 +855,13 @@ a[onclick="openMenu()"] {
 
 .opac-show {
   opacity: 1;
+  z-index: 5;
 }
 
-.responsive {
+div.responsive {
+  display: block;
   opacity: 1;
+  z-index: 5;
 }
 
 /*---------------------------------media----------------------
@@ -954,7 +974,7 @@ a[onclick="openMenu()"] {
     padding: 5px;
     margin-right: 10px;
   }
-  .footer .tender__button{
+  .footer .tender__button {
     margin-right: 18px;
   }
   .header__contacts a:first-of-type {
