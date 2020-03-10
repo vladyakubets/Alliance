@@ -71,6 +71,7 @@ a {
 }
 
 .navbar__link {
+  display: inline-block;
   padding: 15px;
   font-weight: 400;
   font-size: 12px;
@@ -79,8 +80,8 @@ a {
 }
 .down-arrow {
   position: absolute;
-  top: 19px;
-  right: 7px;
+  top: 20px;
+  right: 5px;
   border: solid #c7c7c8;
   border-width: 0 1px 1px 0;
   display: inline-block;
@@ -197,6 +198,7 @@ a {
 /*---------------------Gallery-----------------------------------------------------*/
 .infogallery {
   margin-top: 15px;
+  margin-bottom: 55px;
 }
 
 .infogallery__inner {
@@ -289,9 +291,7 @@ a {
 }
 /*----------------------END GALLERY-------------------------------*/
 /*----------------------LICENCES-------------------------------*/
-.licences {
-  margin-top: 55px;
-}
+
 .licences__inner {
   border: 1px solid #626262;
   padding: 30px 80px 45px;
@@ -771,7 +771,9 @@ div.tender-active {
 }
 
 /*--------------------MOBILE NAVBAR------------------*/
-
+#menu-icon {
+  display: none;
+}
 .mobile {
   display: none;
   opacity: 0;
@@ -780,6 +782,7 @@ div.tender-active {
 
 .mobile__menu {
   position: fixed;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
@@ -795,7 +798,7 @@ a[onclick="openMenu()"] {
 
 .menu-wrap {
   opacity: 0;
-  max-width: 260px;
+  max-width: 300px;
   height: 100%;
   z-index: -1;
   background-color: #1b1a22;
@@ -866,6 +869,116 @@ div.responsive {
   z-index: 5;
 }
 
+/*-----------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+---------------------------SERVICE--------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+--------------------------------------------------------------*/
+
+.header-wrap {
+  position: relative;
+  height: 600px;
+  background: url("/images/service/header_image.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.header-blur {
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(46, 46, 54, 0.7),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+}
+.undertitle {
+  flex-grow: 3;
+}
+.undertitle .container {
+  height: 100%;
+}
+.undertitle__inner {
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.undertitle__inner .info-wrap {
+  position: absolute;
+  top: 130px;
+}
+.undertitle .card__title {
+  font-size: 40px;
+  margin-top: 0px;
+}
+.undertitle .card__text {
+  font-size: 20px;
+}
+.undertitle .card__title::before {
+  content: none;
+}
+
+.chain__inner {
+  word-spacing: 3px;
+}
+.chain__inner p {
+  margin-top: 46px;
+  margin-bottom: 30px;
+}
+
+.chain__inner span {
+  font-weight: 700;
+  font-size: 13.42px;
+}
+
+.cardbox__inner {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardbox__card {
+  border: 1px solid #626262;
+  padding: 40px 80px 53px;
+  width: 100%;
+  max-width: 643px;
+  height: 335px;
+  margin-bottom: 15px;
+}
+
+.cardbox__header {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0px;
+  margin-bottom: 22px;
+}
+
+.cardbox__text {
+  margin: 0px;
+  margin-bottom: 28px;
+}
+
+.send__button {
+  line-height: 42px;
+  width: 145px;
+  height: 45px;
+  text-align: center;
+  border: 1px solid white;
+  transition: 0.2s all;
+}
+
+.send__button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
 /*---------------------------------media----------------------
 --------------------------------------------------
 ------------------------------------
@@ -891,6 +1004,9 @@ div.responsive {
   .header__contacts a:first-of-type {
     margin-right: 15px;
   }
+  #menu-icon {
+    display: block;
+  }
   .burger-line {
     display: block;
   }
@@ -902,6 +1018,10 @@ div.responsive {
   }
   .footer .header__inner {
     display: flex;
+  }
+  .footer .header__contacts a,
+  .footer .header__contacts .header__phone {
+    margin-right: 0px;
   }
   .footer__inner {
     padding: 18px 15px;
@@ -934,6 +1054,10 @@ div.responsive {
   }
 }
 @media screen and (max-width: 768px) {
+  .cardbox__card {
+    padding: 40px 25px 20px;
+    height: min-content;
+  }
   .form__inner {
     padding: 42px 15px;
     display: flex;
@@ -1046,8 +1170,8 @@ div.responsive {
     line-height: 1.1;
     color: #fafafa;
   }
-  .licences {
-    margin-top: 34px;
+  .infogallery {
+    margin-bottom: 34px;
   }
   .licences__title {
     margin-top: 15px;
@@ -1105,9 +1229,7 @@ div.responsive {
   .info-wrap {
     min-height: 100px;
   }
-  .footer .header__contacts img{
-    margin-right: 0px;
-  }
+
   .form__label {
     font-size: 20px;
   }
@@ -1131,5 +1253,24 @@ div.responsive {
   }
   .header__logo {
     width: 83px;
+  }
+  .undertitle .card__title {
+    font-size: 20px;
+  }
+
+  .undertitle .card__text {
+    font-size: 12px;
+  }
+  .header-wrap {
+    height: 390px;
+  }
+  .undertitle__inner .info-wrap {
+    top: 80px;
+  }
+  .header-blur {
+    background-image: linear-gradient(
+      rgba(46, 46, 54, 0.7),
+      rgba(0, 0, 0, 0.1)
+    );
   }
 }
