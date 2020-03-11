@@ -1041,12 +1041,16 @@ div.responsive {
 }
 
 .swiper-pagination-bullet {
+	line-height: 33px;
+	text-align: center;
 	width: 36px;
 	height: 36px;
-	background-color: transparent;
+	color: #fff;
+	background-color: #212029;
 	border: 1px solid #fff;
 }
 .swiper-pagination-bullet-active {
+	color: black;
 	background-color: #fff;
 }
 .swiper-button-prev,
