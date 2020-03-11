@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="fonts/opensanscss/stylesheet.css" />
     <link rel="stylesheet" href="fonts/playfairdisplay/stylesheet.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="/swiper-5.3.6/package/css/swiper.min.css">
+    <link rel="stylesheet" href="swiper-5.3.6/package/css/swiper.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -208,7 +208,7 @@
                                     <div class="infogallery__text d-flex">
                                         <div class="info-wrap">
                                             <h2 class="card__title">
-                                                Проектыне работы. Реконструкция объектов недвижимости
+                                                FIRST
                                             </h2>
                                             <p class="card__text">
                                                 Стоимость работ рассчитывается индивидуально
@@ -277,7 +277,7 @@
                                     <div class="infogallery__text d-flex">
                                         <div class="info-wrap">
                                             <h2 class="card__title">
-                                                Проектыне работы. Реконструкция объектов недвижимости
+                                                MIDDLE
                                             </h2>
                                             <p class="card__text">
                                                 Стоимость работ рассчитывается индивидуально
@@ -329,7 +329,7 @@
                                 <div class="infogallery__blur">
                                     <div class="infogallery__text d-flex">
                                         <div class="info-wrap">
-                                            <h2 class="card__title">Согласование перепланировок</h2>
+                                            <h2 class="card__title"></h2>
                                             <p class="card__text">
                                                 Стоимость работ по согласованию перепланировок
                                             </p>
@@ -346,7 +346,7 @@
                                     <div class="infogallery__text d-flex">
                                         <div class="info-wrap">
                                             <h2 class="card__title">
-                                                Проектыне работы. Реконструкция объектов недвижимости
+                                                LAST
                                             </h2>
                                             <p class="card__text">
                                                 Стоимость работ рассчитывается индивидуально
@@ -362,11 +362,25 @@
                     </div>
                 </div>
                 <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+                <div class="navigation-wrap">
+                    <div class="swiper-pagination " onclick="currentSlide()"></div>
 
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="arrows-wrap">
+                        <div class="arrow-box">
+                            <div class="swiper-button-first disabled" id="left-arrows" onclick="mySwiper.slideTo(0);">
+                            </div>
+                            <div class="swiper-button-prev" id="button-prev"></div>
+                            <div class="swiper-button-next" id="button-next"></div>
+                            <div class="swiper-button-last" id="right-arrows"
+                                onclick="mySwiper.slideTo(mySwiper.slides.length - 1);">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
 
 
             </div>
@@ -489,14 +503,14 @@
         </div>
     </div>
     <!-- END FOOTER  -->
-    <script src="/js/scripts.js"></script>
-    <script src="../swiper-5.3.6/package/js/swiper.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="swiper-5.3.6/package/js/swiper.min.js"></script>
     <script>
         var menu = ['1', '2', '3']
         var mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
-            loop: true,
+            loop: false,
 
             // If we need pagination
             pagination: {
@@ -523,8 +537,10 @@
             renderBullet: function (index, className) {
                 return '<span class="' + className + '">' + (index + 1) + '</span>';
             },
+            
 
         })
+        mySwiper.on('slideChange', function (){currentSlide();});
     </script>
 </body>
 
