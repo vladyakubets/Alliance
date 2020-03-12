@@ -376,7 +376,7 @@ a {
 .background__blur {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(27, 26, 34, 0.7);
+	background-color: rgba(27, 26, 34, 0.5);
 	padding: 14px;
 
 	opacity: 0;
@@ -484,23 +484,42 @@ a {
 .form__input::placeholder {
 	color: #e0e0e0;
 	font-size: 15px;
+	opacity: 1;
 }
+
 
 .form__input {
 	padding: 15px 30px;
+	transition: border-bottom-color 0.2s linear;
 }
 
 .form__select {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	padding: 10px 30px;
+	padding: 15px 30px;
 }
 
 .select__wrap {
 	position: relative;
 	width: 100%;
 	max-width: 225px;
+}
+.nice-select {
+	line-height: 15px;
+	border-radius: unset;
+}
+
+.nice-select .list {
+	background-color: #212029;
+	border-radius: 5px;
+	box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+	width: 100%;
+}
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+	background-color: #18171d;
 }
 
 .select-arrow {
@@ -532,6 +551,9 @@ a {
 
 .form__input:focus {
 	outline: none;
+}
+.form__input:focus {
+	border-bottom-color: #999;
 }
 
 .form__button {
@@ -1122,9 +1144,8 @@ div.responsive {
 }
 .swiper-button-first::after {
 	content: "<<";
-	height: 10px;
 	width: 10px;
-	font-size: 8px;
+	font-size: 9.5px;
 	font-weight: 700;
 	position: relative;
 	top: calc((100% - 23px) / 2);
@@ -1143,14 +1164,13 @@ div.responsive {
 }
 .swiper-button-last::before {
 	content: ">>";
-	height: 10px;
+
 	width: 10px;
-	font-size: 8px;
+	font-size: 9.5px;
 	font-weight: 700;
 	position: relative;
 	top: calc((100% - 23px) / 2);
 	line-height: 10px;
-	/* right: 1px; */
 }
 
 .swiper-pagination {
@@ -1211,6 +1231,11 @@ div.responsive {
 	margin: 0;
 	margin-bottom: 40px;
 }
+
+.swiper-slide .infogallery__card {
+	max-width: 645px;
+	height: 400px;
+}
 .projects__wrap {
 	width: 100%;
 	max-width: 950px;
@@ -1249,6 +1274,23 @@ div.responsive {
 ------------------------------------------------------------
 ---------------------------------------------------------
 ----------------------------------------------------------*/
+@media screen and (max-width: 1900px) {
+	.projects .projects__card {
+		width: 400px;
+		height: 347px;
+	}
+	.projects-wrap .projects__card {
+		width: 400px;
+		height: 347px;
+	}
+}
+@media screen and (max-width: 1600px) {
+	.projects .projects__card {
+		width: 355px;
+		height: 347px;
+	}
+}
+
 @media screen and (max-width: 1340px) {
 	.container {
 		width: 90%;
@@ -1274,6 +1316,10 @@ div.responsive {
 	}
 }
 @media screen and (max-width: 1200px) {
+	.projects .projects__card {
+		width: 475px;
+		height: 347px;
+	}
 	.left__comment,
 	.right__comment {
 		padding: 0 40px;
@@ -1329,6 +1375,12 @@ div.responsive {
 		max-width: none;
 	}
 }
+@media screen and (max-width: 1024px) {
+	.background__blur {
+		opacity: 1;
+	}
+}
+
 @media screen and (max-width: 855px) {
 	.contacts__container {
 		padding: 0 15px;
@@ -1347,9 +1399,7 @@ div.responsive {
 	.info__content {
 		padding: 10px;
 	}
-	.background__blur {
-		opacity: 1;
-	}
+
 	.cardbox__card {
 		padding: 40px 25px 20px;
 		height: min-content;
