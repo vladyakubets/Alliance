@@ -969,7 +969,7 @@ div.responsive {
 	word-spacing: 3px;
 }
 
-.chain__inner span {
+.chain__inner a:last-child {
 	font-weight: 700;
 }
 
