@@ -1,3 +1,7 @@
+$(document).ready(function() {
+	$("select").niceSelect();
+});
+
 var mobileMenu = document.getElementById("mobile-nav");
 var backgroundBlur = document.getElementById("mobile-blur");
 var mobileNav = document.getElementById("mobile-wrap");
