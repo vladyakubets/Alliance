@@ -1,152 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="fonts/opensanscss/stylesheet.css" />
-    <link rel="stylesheet" href="fonts/playfairdisplay/stylesheet.css" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <title>ALLIANCE</title>
-  </head>
-  <body>
-    <!-- POPUP TENDER-->
-    <div class="popup" id="tender">
-      <div class="popup__blur" onclick="closeTender(event)">
-        <div class="popup-window" >
-          <form action="" class="popup-window__form" id="popup-window">
-            <a href="#" class="close" onclick="closeTender(event)"></a>
-            <label class="form__label">Хочу с вами работать</label>
-            <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
-            <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
-            <textarea name="about__tender"  class="about__tender" id="about__tender" cols="30" rows="10" placeholder="Расскажите о тендере*"></textarea>
-            <button class="form__button" type="submit">Отправить заявку</button>
-            <p class="tender__message">отправляя заявку</p>
-          </form>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="fonts/opensanscss/stylesheet.css" />
+  <link rel="stylesheet" href="fonts/playfairdisplay/stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>ALLIANCE</title>
+</head>
+
+<body>
+  <!-- POPUP TENDER-->
+  <div class="popup" id="tender">
+    <div class="popup__blur" id="popup__blur" onclick="closeTender(event)">
+      <div class="popup-window">
+        <form action="" class="popup-window__form" id="popup-window">
+          <a class="close" id="close" onclick="closeTender(event)"></a>
+          <label class="form__label">Хочу с вами работать</label>
+          <input class="form__input" type="text" name="name" id="" placeholder="Ваша компания*">
+          <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
+          <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
+          <textarea name="about__tender" class="about__tender" id="about__tender" cols="30" rows="10"
+            placeholder="Расскажите о тендере*"></textarea>
+          <button class="form__button" type="submit">Отправить заявку</button>
+          <p class="tender__message">Отправляя заявку, вы соглашаетесь
+            с политикой конфиденциальности</p>
+        </form>
       </div>
     </div>
-    
-    
-    <!-- MOBILE MENU -->
-    <div class="mobile" id="mobile-nav">
-      <div class="container">
-        <div class="mobile__menu"id="mobile-blur" onclick="closeMenu(event)">
-          <div class="menu-wrap" id="mobile-wrap">
-            <nav class="navbar">
-              <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
-              <a class="navbar__link" href="#">Кадастровые работы 
-              </a>
-              <a class="navbar__link" href="#">Согласование в КГА, КГИОП, ГКУ 
-                Имущество Санкт-Петербурга</a>
-              <a class="navbar__link" href="#">Согласование перепланировок </a>
-              <a class="navbar__link" href="#">Проектные работы. Реконструкция 
-                объектов недвижимости</a>
-              <a class="navbar__link" href="#">ПРОЕКТЫ</a>
-              <a class="navbar__link" href="#">СТАТЬИ</a>
-              <a class="navbar__link" href="#">О КОМПАНИИ</a>
-              <a class="navbar__link" href="#">КОНТАКТЫ</a>
-              
-            </nav>
-          </div>
-         
+  </div>
+
+
+  <!-- MOBILE MENU -->
+  <div class="mobile" id="mobile-nav">
+    <div class="container">
+      <div class="mobile__menu" id="mobile-blur" onclick="closeMenu(event)">
+        <div class="menu-wrap" id="mobile-wrap">
+          <nav class="navbar">
+            <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
+            <a class="navbar__link" href="#">Кадастровые работы
+            </a>
+            <a class="navbar__link" href="service.html">Согласование в КГА, КГИОП, ГКУ
+              Имущество Санкт-Петербурга</a>
+            <a class="navbar__link" href="#">Согласование перепланировок </a>
+            <a class="navbar__link" href="#">Проектные работы. Реконструкция
+              объектов недвижимости</a>
+            <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
+            <a class="navbar__link" href="articles.html">СТАТЬИ</a>
+            <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
+            <a class="navbar__link" href="#">КОНТАКТЫ</a>
+
+          </nav>
         </div>
+
       </div>
     </div>
-    <!-- END MOBILE MENU -->
-    <!-- HEADER -->
-    <div class="header">
-      <div class="container">
-        <div class="header__inner d-flex">
-          <div class="header__left d-flex">
-            <div class="header__logo">
-              <a href="mainpage.html">
-                <img
-                class="logotype"
-                src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
-                alt="Alliance logo"
-              />
-              </a>
-              
-            </div>
-            <div class="header__navbar">
-              <nav>
-                <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
-                <div class="dropdown">
-                  <div class="dropdown">
-                    <div class="navbar__link">УСЛУГИ
-                      <i class="down-arrow"></i>
-                  </div>
+  </div>
+  <!-- END MOBILE MENU -->
+  <!-- HEADER -->
+  <div class="header">
+    <div class="container">
+      <div class="header__inner d-flex">
+        <div class="header__left d-flex">
+          <div class="header__logo">
+            <a href="mainpage.html">
+              <img class="logotype" src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
+                alt="Alliance logo" />
+            </a>
+
+          </div>
+          <div class="header__navbar">
+            <nav>
+              <a class="navbar__link" href="mainpage.html">ГЛАВНАЯ</a>
+
+              <div class="dropdown">
+                <div class="navbar__link">УСЛУГИ
+                  <i class="down-arrow"></i>
+                </div>
                 <div class="dropdown-content">
-                  <a href="#">Кадастровые работы 
+                  <a href="#">Кадастровые работы
                   </a>
-                  <a href="service.html">Согласование в КГА, КГИОП, ГКУ 
+                  <a href="service.html">Согласование в КГА, КГИОП, ГКУ
                     Имущество Санкт-Петербурга</a>
                   <a href="#">Согласование перепланировок </a>
-                  <a href="#">Проектные работы. Реконструкция 
+                  <a href="#">Проектные работы. Реконструкция
                     объектов недвижимости</a>
                 </div>
-                </div>
-                
-                <a class="navbar__link" href="#">ПРОЕКТЫ</a>
-          <a class="navbar__link" href="#">СТАТЬИ</a>
-          <a class="navbar__link" href="#">О КОМПАНИИ</a>
-          <a class="navbar__link" href="#">КОНТАКТЫ</a>
-              </nav>
-            </div>
+              </div>
+
+              <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
+              <a class="navbar__link" href="articles.html">СТАТЬИ</a>
+              <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
+              <a class="navbar__link" href="#">КОНТАКТЫ</a>
+            </nav>
           </div>
-          <div class="header__right d-flex">
-            <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
-            <div class="header__contacts d-flex">
-              
-              <a target="_self" href="tel:88129220868"
-                ><img
-                class="header__phone fl"
-                src="images/icons/phone-call.svg"
-                href="tel:88129220868"
-                alt="phone icon"
-              /></a
-              >
-              <a target="_self" href="tel:88129220868"
-                >8 (812) <span>922-08-68</span></a
-                >
-                <a href="javascript:void(0);" onclick="openMenu()" id="menu-icon">
-                  <div class="burger-line first" id="burger-line1"></div>
-              <div class="burger-line second" id="burger-line2" ></div>
-              <div class="burger-line third" id="burger-line3" ></div>
+        </div>
+        <div class="header__right d-flex">
+          <a class="tender__button" id="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
+          <div class="header__contacts d-flex">
+
+            <a target="_self" href="tel:88129220868"><img class="header__phone fl" src="images/icons/phone-call.svg"
+                href="tel:88129220868" alt="phone icon" /></a>
+            <a target="_self" href="tel:88129220868">8 (812) <span>922-08-68</span></a>
+            <a href="javascript:void(0);" onclick="openMenu()" id="menu-icon">
+              <div class="burger-line first" id="burger-line1"></div>
+              <div class="burger-line second" id="burger-line2"></div>
+              <div class="burger-line third" id="burger-line3"></div>
               <div class="burger-line fourth" id="burger-line4"></div>
-                </a>
-              
-            </div>
+            </a>
+
           </div>
         </div>
       </div>
     </div>
-    <!-- HEADER END -->
+  </div>
+  <!-- HEADER END -->
 
-    <!-- TITLE-->
-    <div class="title">
-      <div class="container">
-        <div class="title__inner">
-          <h1>Кадастровые работы СОГЛАСОВАНИЕ В КГА Санкт-Петербурга</h1>
-        </div>
+  <!-- TITLE-->
+  <div class="title">
+    <div class="container">
+      <div class="title__inner">
+        <h1>Кадастровые работы СОГЛАСОВАНИЕ В КГА Санкт-Петербурга</h1>
       </div>
     </div>
-    <!-- TITLE END-->
+  </div>
+  <!-- TITLE END-->
 
-    <!-- GALLERY-->
-    <div class="infogallery">
-      <div class="container">
-        <div class="infogallery__inner d-flex">
-          <!-- ITEM -->
-          <div class="infogallery__card">
+  <!-- GALLERY-->
+  <div class="infogallery">
+    <div class="container">
+      <div class="infogallery__inner d-flex">
+        <!-- ITEM -->
+        <div class="infogallery__card">
+          <a href="articleinner.html">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
                 <div class="info-wrap">
@@ -158,10 +150,14 @@
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
-          </div>
-          <!-- END ITEM -->
-          <!-- ITEM -->
-          <div class="infogallery__card">
+          </a>
+        </div>
+
+
+        <!-- END ITEM -->
+        <!-- ITEM -->
+        <div class="infogallery__card">
+          <a href="articleinner.html">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
                 <div class="info-wrap">
@@ -170,14 +166,17 @@
                     Имущество Санкт-Петербурга
                   </p>
                 </div>
-                
+
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
-          </div>
-          <!-- END ITEM -->
-          <!-- ITEM -->
-          <div class="infogallery__card">
+          </a>
+
+        </div>
+        <!-- END ITEM -->
+        <!-- ITEM -->
+        <div class="infogallery__card">
+          <a href="articleinner.html">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
                 <div class="info-wrap">
@@ -186,14 +185,16 @@
                     Стоимость работ по согласованию перепланировок
                   </p>
                 </div>
-                
+
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
-          </div>
-          <!-- END ITEM -->
-          <!-- ITEM -->
-          <div class="infogallery__card">
+          </a>
+        </div>
+        <!-- END ITEM -->
+        <!-- ITEM -->
+        <div class="infogallery__card">
+          <a href="articleinner.html">
             <div class="infogallery__blur">
               <div class="infogallery__text d-flex">
                 <div class="info-wrap">
@@ -204,438 +205,332 @@
                     Стоимость работ рассчитывается индивидуально
                   </p>
                 </div>
-                
+
                 <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
               </div>
             </div>
-          </div>
-          <!-- END ITEM -->
+          </a>
+        </div>
+        <!-- END ITEM -->
+      </div>
+    </div>
+  </div>
+  <!-- GALLERY END -->
+
+  <!-- LICENCES -->
+  <div class="licences">
+    <div class="container">
+      <div class="licences__inner d-flex">
+        <div class="licences__about">
+          <h3 class="licences__title">Лицензии</h3>
+          <p class="licences__text">
+            ООО «Альянс» - команда квалифицированных специалистов, оказывающих
+            следующие виды услуг: кадастровые работы, разработка и
+            согласование проектной документации, технического обследования
+            зданий и сооружений.
+          </p>
+        </div>
+        <div class="licences__gallery d-flex">
+          <a data-fancybox="gallery" href="images/licence/01.jpg"><img src="images/licence/01.jpg" /></a>
+          <a data-fancybox="gallery" href="images/licence/02.jpg"><img src="images/licence/02.jpg" /></a><a
+            data-fancybox="gallery" href="images/licence/03.jpg"><img src="images/licence/03.jpg" /></a><a
+            data-fancybox="gallery" href="images/licence/04.jpg"><img src="images/licence/04.jpg" /></a>
         </div>
       </div>
     </div>
-    <!-- GALLERY END -->
+  </div>
+  <!-- END LICENCES  -->
 
-    <!-- LICENCES -->
-    <div class="licences">
-      <div class="container">
-        <div class="licences__inner d-flex">
-          <div class="licences__about">
-            <h3 class="licences__title">Лицензии</h3>
-            <p class="licences__text">
-              ООО «Альянс» - команда квалифицированных специалистов, оказывающих
-              следующие виды услуг: кадастровые работы, разработка и
-              согласование проектной документации, технического обследования
-              зданий и сооружений.
+  <!-- PROJECTS  -->
+  <div class="projects">
+    <div class="container">
+      <div class="projects__header">
+        <h3 class="projects__title">Реализованные проекты</h3>
+      </div>
+    </div>
+    <div class="projects__gallery d-flex">
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
             </p>
-          </div>
-          <div class="licences__gallery d-flex">
-            <a data-fancybox="gallery" href="images/licence/01.jpg"
-              ><img src="images/licence/01.jpg"
-            /></a>
-            <a data-fancybox="gallery" href="images/licence/02.jpg"
-              ><img src="images/licence/02.jpg"/></a
-            ><a data-fancybox="gallery" href="images/licence/03.jpg"
-              ><img src="images/licence/03.jpg"/></a
-            ><a data-fancybox="gallery" href="images/licence/04.jpg"
-              ><img src="images/licence/04.jpg"
-            /></a>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- END LICENCES  -->
-
-    <!-- PROJECTS  -->
-    <div class="projects">
-      <div class="container">
-        <div class="projects__header">
-          <h3 class="projects__title">Реализованные проекты</h3>
-        </div>
-      
-      <div class="projects__gallery d-flex">
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-        <!-- Item  -->
-        <div class="projects__card">
-          <div class="background__blur">
-            <div class="projects__hover d-flex">
-              <h2 class="card__title">Проектные работы и
-                кадастровые работы
-                </h2>
-              <p class="card__text">
-                Жилой комплекс Априори
-              </p>
-              <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        </div>
-      </div>
-    </div>
-    <!-- END PROJECTS  -->
-
-    <!-- COMMENTS -->
-    <div class="comments licences">
-      <div class="container">
-        <div class="comments__inner licences__inner d-flex">
-          <div class="comments__about licences__about">
-            <h3 class="comments__tilte licences__title">Отзывы клиентов</h3>
-            <p class="comments__text licences__text">
-              ООО «Альянс» - команда квалифицированных специалистов, 
-оказывающих следующие виды услуг: кадастровые работы, 
-разработка и согласование проектной документации, 
-технического обследования зданий и сооружений. 
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
             </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
           </div>
-          <div class="comments__gallery licences__gallery d-flex">
-            <a data-fancybox="gallery" href="images/comments/01.jpg"
-              ><img src="images/comments/01.jpg"
-            /></a>
-            <a data-fancybox="gallery" href="images/comments/02.jpg"
-              ><img src="images/comments/02.jpg"
-            /></a>
-            <a data-fancybox="gallery" href="images/comments/03.jpg"
-              ><img src="images/comments/03.jpg"
-            /></a>
-            <a data-fancybox="gallery" href="images/comments/04.jpg"
-              ><img src="images/comments/04.jpg"
-            /></a>
-            
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
+          </div>
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
+          </div>
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
+          </div>
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
+          </div>
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
+          </div>
+        </div>
+      </div>
+      <!-- Item  -->
+      <div class="projects__card">
+        <div class="background__blur">
+          <div class="projects__hover d-flex">
+            <h2 class="card__title">Проектные работы и
+              кадастровые работы
+            </h2>
+            <p class="card__text">
+              Жилой комплекс Априори
+            </p>
+            <p class="card__price">ОТ 350,00 РУБЛЕЙ</p>
           </div>
         </div>
       </div>
     </div>
-    <!-- END COMMENTS  -->
-    <!-- CLIENTS  -->
-    <div class="clients projects">
-      <div class="container">
-        <div class="clients__header projects__header">
-          <h3 class="clients__title projects__title">Наши клиенты</h3>
+
+  </div>
+  </div>
+  <!-- END PROJECTS  -->
+
+  <!-- COMMENTS -->
+  <div class=" licences">
+    <div class="container">
+      <div class=" licences__inner d-flex">
+        <div class=" licences__about">
+          <h3 class=" licences__title">Отзывы клиентов</h3>
+          <p class=" licences__text">
+            ООО «Альянс» - команда квалифицированных специалистов,
+            оказывающих следующие виды услуг: кадастровые работы,
+            разработка и согласование проектной документации,
+            технического обследования зданий и сооружений.
+          </p>
         </div>
-        <div class="clients__inner d-flex">
-          <div class="client__wrap">
-            <img src="images/clients/01.png" alt="">
-          </div>
-          <div class="client__wrap">
-            <img src="images/clients/02.png" alt="">
-          </div>
-          <div class="client__wrap">
-            <img src="images/clients/03.png" alt="">
-          </div>
-          <div class="client__wrap">
-            <img src="images/clients/04.png" alt="">
-          </div>
-          <div class="client__wrap">
-            <img src="images/clients/05.png" alt="">
-          </div>
-          <div class="client__wrap">
-            <img src="images/clients/06.png" alt="">
-          </div>
+        <div class=" licences__gallery d-flex">
+          <a data-fancybox="gallery" href="images/comments/01.jpg"><img src="images/comments/01.jpg" /></a>
+          <a data-fancybox="gallery" href="images/comments/02.jpg"><img src="images/comments/02.jpg" /></a>
+          <a data-fancybox="gallery" href="images/comments/03.jpg"><img src="images/comments/03.jpg" /></a>
+          <a data-fancybox="gallery" href="images/comments/04.jpg"><img src="images/comments/04.jpg" /></a>
+
         </div>
       </div>
     </div>
-    <!-- END CLIENTS  -->
-    <!-- FORM  -->
-    <div class="form">
-      <div class="container">
-        <form action="" class="form__inner">
-          <label class="form__label">Хочу с вами работать</label>
-          <div class="form__container d-flex">
-            <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
-            <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
-            <div class="select__wrap">
-              <select class="form__select" id="service" name="service">
-                <option selected disabled hidden>Услуга*</option>
-                <option value="au">Australia</option>
-                <option value="ca">Canada</option>
-                <option value="usa">USA</option>
-              </select>
-              <i class="down-arrow select-arrow"></i>
-            </div>
-            <button class="form__button" type="submit">Отправить заявку</button>
-          </div>
-          
-        </form>
+  </div>
+  <!-- END COMMENTS  -->
+  <!-- CLIENTS  -->
+  <div class="clients projects">
+    <div class="container">
+      <div class="clients__header projects__header">
+        <h3 class="clients__title projects__title">Наши клиенты</h3>
+      </div>
+      <div class="clients__inner d-flex">
+        <div class="client__wrap">
+          <img src="images/clients/01.png" alt="">
+        </div>
+        <div class="client__wrap">
+          <img src="images/clients/02.png" alt="">
+        </div>
+        <div class="client__wrap">
+          <img src="images/clients/03.png" alt="">
+        </div>
+        <div class="client__wrap">
+          <img src="images/clients/04.png" alt="">
+        </div>
+        <div class="client__wrap">
+          <img src="images/clients/05.png" alt="">
+        </div>
+        <div class="client__wrap">
+          <img src="images/clients/06.png" alt="">
+        </div>
       </div>
     </div>
-    <!-- END FORM  -->
-    <!-- CONTACTS  -->
-    <div class="contacts">
-      <div class="container">
-        <div class="contacts__container d-flex">
-          <div class="contacts__inner">
-            <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="images/icons/phone-call.svg" alt=" calling phone">
+  </div>
+  <!-- END CLIENTS  -->
+  <!-- FORM  -->
+  <div class="form">
+    <div class="container">
+      <form action="" class="form__inner">
+        <label class="form__label">Хочу с вами работать</label>
+        <div class="form__container d-flex">
+          <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
+          <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
+          <div class="select__wrap">
+            <select class="form__select" id="service" name="service">
+              <option selected disabled hidden>Услуга*</option>
+              <option value="au">Australia</option>
+              <option value="ca">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+            <i class="down-arrow select-arrow"></i>
+          </div>
+          <button class="form__button" type="submit">Отправить заявку</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <!-- END FORM  -->
+  <!-- CONTACTS  -->
+  <div class="contacts">
+    <div class="container">
+      <div class="contacts__container d-flex">
+        <div class="contacts__inner">
+          <div class="contacts__wrap d-flex">
+            <img class="header__phone fl" src="images/icons/phone-call.svg" alt=" calling phone">
             <p class="contacts__phone">8 (812) 922-08-68</p>
-            </div>
-            <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="images/icons/pin.svg" alt=" map pin">
-            <p>г. Санкт-Петербург, Приморский 
-              пр-к, 14, пом. 6М</p>
-            </div>
-            <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="images/icons/clock.svg" alt="clock">
-            <p>9:00-18:00</p>
-            </div>
-            <div class="contacts__wrap d-flex">
-              <img class="header__phone fl" src="images/icons/mail.svg" alt="mail">
-            <p>st.alliance.group@gmail.com</p>
-            </div>
-            <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
           </div>
-          <div class="vertical-divider"></div>
+          <div class="contacts__wrap d-flex">
+            <img class="header__phone fl" src="images/icons/pin.svg" alt=" map pin">
+            <p>г. Санкт-Петербург, Приморский
+              пр-к, 14, пом. 6М</p>
+          </div>
+          <div class="contacts__wrap d-flex">
+            <img class="header__phone fl" src="images/icons/clock.svg" alt="clock">
+            <p>9:00-18:00</p>
+          </div>
+          <div class="contacts__wrap d-flex">
+            <img class="header__phone fl" src="images/icons/mail.svg" alt="mail">
+            <p>st.alliance.group@gmail.com</p>
+          </div>
+          <a class="tender__button" id="tender__button" onclick="openTender(event)" href="#">пригласить в тендер</a>
+        </div>
+        <div class="vertical-divider"></div>
         <div class="activity">
           <h4>Деятельность</h4>
-          <a href="#">Кадастровые работы 
+          <a href="#">Кадастровые работы
           </a>
-          <a href="#">Согласование в КГА, КГИОП, ГКУ 
+          <a href="#">Согласование в КГА, КГИОП, ГКУ
             Имущество Санкт-Петербурга</a>
           <a href="#">Согласование перепланировок </a>
-          <a href="#">Проектные работы. Реконструкция 
+          <a href="#">Проектные работы. Реконструкция
             объектов недвижимости</a>
         </div>
         <div class="articles">
           <h4>Статьи</h4>
           <a href="">Как выбрать подрядчика?
           </a>
-          <a href="">Сколько стоит комплексная 
+          <a href="">Сколько стоит комплексная
             работа по проектированию?</a>
-        </div>
         </div>
       </div>
     </div>
-    <!-- END CONTACTS  -->
-    <!-- FOOTER  -->
-    <div class="footer">
-      <div class="container">
-        <div class="horizontal-divider"></div>
-        <div class="footer__inner d-flex">
-          <div class="footer__logo">
-            <a href="mainpage.html">
-              <img
-              class=""
-              src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
-              alt="Alliance logo"
-            />
-            </a>
-            
-          </div>
-          <p class="footer__text">ООО «Альянс» - команда квалифицированных специалистов, оказывающих следующие виды услуг: кадастровые работы, разработка и согласование проектной документации,
-            технического обследования зданий и сооружений. В основе нашей работы лежат принципы открытого диалога и честотности, взяв на себя обязательства перед заказчиком, 
-            мы выдаем на конечном этапе качественный «продукт», отвечая свой репутацией. </p>
-            
+  </div>
+  <!-- END CONTACTS  -->
+  <!-- FOOTER  -->
+  <div class="footer">
+    <div class="container">
+      <div class="horizontal-divider"></div>
+      <div class="footer__inner d-flex">
+        <div class="footer__logo">
+          <a href="mainpage.html">
+            <img class="" src="images/icons/horizontal_on_transparent_curves_by_logaster.svg" alt="Alliance logo" />
+          </a>
+
         </div>
-        <div class="header__inner d-flex">
-          <div class="header__left d-flex">
-            <div class="header__logo">
-              <a href="mainpage.html">
-                <img
-                class="logotype"
-                src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
-                alt="Alliance logo"
-              />
-              </a>
-              
-            </div>
+        <p class="footer__text">ООО «Альянс» - команда квалифицированных специалистов, оказывающих следующие виды услуг:
+          кадастровые работы, разработка и согласование проектной документации,
+          технического обследования зданий и сооружений. В основе нашей работы лежат принципы открытого диалога и
+          честотности, взяв на себя обязательства перед заказчиком,
+          мы выдаем на конечном этапе качественный «продукт», отвечая свой репутацией. </p>
+
+      </div>
+      <div class="header__inner d-flex">
+        <div class="header__left d-flex">
+          <div class="header__logo">
+            <a href="mainpage.html">
+              <img class="logotype" src="images/icons/horizontal_on_transparent_curves_by_logaster.svg"
+                alt="Alliance logo" />
+            </a>
+
+          </div>
         </div>
         <div class="header__right d-flex">
-          <a class="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
+          <a class="tender__button" id="tender__button" href="#" onclick="openTender(event)">пригласить в тендер</a>
           <div class="header__contacts d-flex">
-            
-            <a target="_self" href="tel:88129220868"
-              ><img
-              class="header__phone fl"
-              src="images/icons/phone-call.svg"
-              href="tel:88129220868"
-              alt="phone icon"
-            /></a
-            >
-    </div>
+
+            <a target="_self" href="tel:88129220868"><img class="header__phone fl" src="images/icons/phone-call.svg"
+                href="tel:88129220868" alt="phone icon" /></a>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    </div>
-    <!-- END FOOTER  -->
-<script>
-  var mobileMenu = document.getElementById("mobile-nav");
-          var backgroundBlur = document.getElementById("mobile-blur");
-          var mobileNav = document.getElementById("mobile-wrap");
-          var burger_line1 = document.getElementById("burger-line1");
-          var burger_line2 = document.getElementById("burger-line2");
-          var burger_line3 = document.getElementById("burger-line3");
-          var burger_line4 = document.getElementById("burger-line4");
+  </div>
+  <!-- END FOOTER  -->
+  <script src="js/scripts.js"></script>
+</body>
 
-          var tender = document.getElementById("tender");
-          var tender_form = document.getElementById("popup-window");
-          
-
-        function openMenu() {
-          document.body.classList.add("fixed");
-          if (mobileMenu.classList.contains("responsive")) {
-
-            mobileMenu.classList.remove("responsive");
-            burger_line1.classList.remove("disp-none");
-            burger_line2.classList.remove("rot-45");
-            burger_line3.classList.remove("rot--45");
-            burger_line4.classList.remove("disp-none");
-            
-            
-          } else {
-            
-            mobileMenu.classList.add("responsive");
-            burger_line1.classList.add("disp-none");
-            burger_line2.classList.add("rot-45");
-            burger_line3.classList.add("rot--45");
-            burger_line4.classList.add("disp-none");
-          }
-          if (backgroundBlur.classList.contains("opac-show")) {
-            backgroundBlur.classList.remove("opac-show");
-          } else {
-            backgroundBlur.classList.add("opac-show");
-          }
-          if (mobileNav.classList.contains("opac-show")) {
-            mobileNav.classList.remove("opac-show");
-          } else {
-            mobileNav.classList.add("opac-show");
-          }  
-        }
-
-        function closeMenu(e) {
-         if(e.target.classList.contains("navbar")){
-          return;
-         }         
-          document.body.removeAttribute("class");      
-            mobileMenu.classList.remove("responsive");
-            burger_line1.classList.remove("disp-none");
-            burger_line2.classList.remove("rot-45");
-            burger_line3.classList.remove("rot--45");
-            burger_line4.classList.remove("disp-none");
-            backgroundBlur.classList.remove("opac-show");
-            mobileNav.classList.remove("opac-show");
-          
-        }
-
-        function openTender(e) {
-          
-          document.body.classList.add("overflow");      
-          tender.classList.add("tender-active");
-          
-        }
-
-        function closeTender(e) {
-         
-          var elementChildrens = tender_form.children;
-          for (var i=0, child; child=elementChildrens[i]; i++) {
-                if(e.target.className === "close"){
-                  
-                  break;
-                }
-                if((child.className === e.target.className) || (e.target.className === "popup-window__form")){
-                  
-                  return;
-                }
-          }
-          document.body.classList.remove("overflow");      
-          tender.classList.remove("tender-active");
-        }
-        
-        </script>
-  </body>
 </html>
