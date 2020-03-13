@@ -487,7 +487,6 @@ a {
 	opacity: 1;
 }
 
-
 .form__input {
 	padding: 15px 30px;
 	transition: border-bottom-color 0.2s linear;
@@ -1286,7 +1285,7 @@ div.responsive {
 }
 @media screen and (max-width: 1600px) {
 	.projects .projects__card {
-		width: 355px;
+		width: 24%;
 		height: 347px;
 	}
 }
@@ -1294,6 +1293,10 @@ div.responsive {
 @media screen and (max-width: 1340px) {
 	.container {
 		width: 90%;
+	}
+	.swiper-slide .infogallery__card {
+		max-width: none;
+		margin: 8px 0;
 	}
 	.infogallery__card {
 		max-width: none;
@@ -1315,11 +1318,8 @@ div.responsive {
 		height: 100%;
 	}
 }
+
 @media screen and (max-width: 1200px) {
-	.projects .projects__card {
-		width: 475px;
-		height: 347px;
-	}
 	.left__comment,
 	.right__comment {
 		padding: 0 40px;
@@ -1375,9 +1375,29 @@ div.responsive {
 		max-width: none;
 	}
 }
+@media screen and (min-width: 1024px) {
+	.projects__wrap {
+		width: 50%;
+		max-width: none;
+		justify-content: center;
+	}
+	.projects__card {
+		width: 50%;
+		height: 347px;
+	}
+	.projects .projects__card {
+		width: 24.9%;
+		height: 347px;
+	}
+}
 @media screen and (max-width: 1024px) {
 	.background__blur {
 		opacity: 1;
+	}
+
+	.projects .projects__card {
+		width: 475px;
+		height: 347px;
 	}
 }
 
