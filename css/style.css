@@ -739,7 +739,7 @@ div.tender-active {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	z-index: 0;
+	z-index: -5;
 	opacity: 0;
 	transition: all 0.2s cubic-bezier(0.91, 0.04, 0.25, 0.96);
 }
