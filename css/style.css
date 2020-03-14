@@ -205,7 +205,7 @@ a {
 	font-family: "Playfair Display", serif;
 	font-weight: 700;
 	font-size: 21px;
-	color: #fafafa;
+	color: #dddddd;
 	letter-spacing: 2px;
 	text-align: center;
 	text-transform: uppercase;
@@ -295,7 +295,7 @@ a {
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	margin-top: 50px;
+	margin-top: 0px;
 	margin-bottom: 0;
 	color: #fafafa;
 }
@@ -331,6 +331,7 @@ a {
 
 .licences__text {
 	color: #e0e0e0;
+	line-height: 20px;
 }
 .licences__gallery {
 	flex-wrap: wrap;
@@ -1123,7 +1124,7 @@ div.responsive {
 }
 .left__comment .info__text,
 .right__comment .info__text {
-	line-height: unset;
+	line-height: 20px;
 }
 .company__comments .vertical-divider {
 	margin: 0;
