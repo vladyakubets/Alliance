@@ -947,7 +947,7 @@ div.responsive {
 .header-wrap {
 	position: relative;
 	height: 600px;
-	background: url("/images/service/header_image.jpg") center no-repeat;
+	background: url("../images/service/header_image.jpg") center no-repeat;
 	background-size: cover;
 }
 
