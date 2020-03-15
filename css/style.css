@@ -227,8 +227,6 @@ a {
 }
 
 .infogallery__card {
-	background-size: cover;
-	background-repeat: no-repeat;
 	position: relative;
 	width: 100%;
 	max-width: 645px;
@@ -1304,7 +1302,7 @@ div.responsive {
 	height: 696px;
 	position: relative;
 }
-.projects__bigimage img{
+.projects__bigimage img {
 	object-fit: cover;
 	position: absolute;
 	width: 100%;
