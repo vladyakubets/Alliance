@@ -1187,6 +1187,8 @@ div.responsive {
 	font-variant: initial;
 }
 .navigation-wrap {
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	height: 130px;
 }
@@ -1194,7 +1196,7 @@ div.responsive {
 .left-arrows-wrap {
 	position: absolute;
 	top: calc((100% - 20px) / 2);
-	left: -20px;
+	left: -40px;
 	height: 20px;
 	width: 10px;
 	cursor: pointer;
@@ -1224,7 +1226,7 @@ div.responsive {
 .right-arrows-wrap {
 	position: absolute;
 	top: calc((100% - 20px) / 2);
-	right: -20px;
+	right: -40px;
 	height: 20px;
 	width: 10px;
 	cursor: pointer;
@@ -1258,9 +1260,11 @@ div.responsive {
 }
 
 .swiper-pagination {
-	position: absolute;
-	bottom: calc((100% - 36px) / 2);
-	left: calc((100% - 322px) / 2);
+	position: unset;
+}
+.swiper-pagination-container {
+	position: relative;
+	width: max-content;
 }
 
 .swiper-pagination-bullet {
@@ -1284,11 +1288,11 @@ div.responsive {
 }
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-	left: 0px;
+	left: -20px;
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-	right: 0px;
+	right: -20px;
 }
 .arrows-wrap {
 	position: absolute;
@@ -1298,11 +1302,8 @@ div.responsive {
 	bottom: calc((100% - 36px) / 2);
 }
 .arrow-box {
-	position: relative;
-
-	height: 130px;
-	left: calc((100% - 322px) / 2);
-	width: 322px;
+	width: max-content;
+	height: max-content;
 }
 .article__header h2 {
 	text-align: center;
