@@ -229,26 +229,17 @@ a {
 .infogallery__card {
 	background-size: cover;
 	background-repeat: no-repeat;
-
+	position: relative;
 	width: 100%;
 	max-width: 645px;
 	min-height: 315px;
 }
-
-.infogallery__card:nth-child(1) {
-	background-image: url("../images/infogallery/01.jpg");
-}
-
-.infogallery__card:nth-child(2) {
-	background-image: url("../images/infogallery/02.jpg");
-}
-
-.infogallery__card:nth-child(3) {
-	background-image: url("../images/infogallery/03.jpg");
-}
-
-.infogallery__card:nth-child(4) {
-	background-image: url("../images/infogallery/04.jpg");
+.infogallery__card img {
+	position: absolute;
+	object-fit: cover;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
 }
 
 .infogallery__card:nth-child(3),
@@ -387,6 +378,7 @@ a {
 .projects__card {
 	width: 475px;
 	height: 347px;
+	position: relative;
 }
 
 .background__blur {
@@ -399,37 +391,12 @@ a {
 	transition: opacity 0.5s;
 }
 
-.projects__card:nth-child(1) {
-	background: url("../images/projects/01.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(2) {
-	background: url("../images/projects/02.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(3) {
-	background: url("../images/projects/03.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(4) {
-	background: url("../images/projects/04.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(5) {
-	background: url("../images/projects/05.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(6) {
-	background: url("../images/projects/06.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(7) {
-	background: url("../images/projects/07.jpg") center no-repeat;
-	background-size: cover;
-}
-.projects__card:nth-child(8) {
-	background: url("../images/projects/08.jpg") center no-repeat;
-	background-size: cover;
+.projects__card img {
+	object-fit: cover;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
 }
 .projects__hover {
 	padding: 55px 35px;
@@ -1335,8 +1302,14 @@ div.responsive {
 .projects__bigimage {
 	width: 100%;
 	height: 696px;
-	background: url("../images/projects/01.jpg") center no-repeat;
-	background-size: cover;
+	position: relative;
+}
+.projects__bigimage img{
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 .projects__bigimage:hover .background__blur {
 	opacity: 1;
