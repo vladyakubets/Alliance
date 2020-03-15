@@ -57,7 +57,7 @@
                         <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
                         <a class="navbar__link" href="articles.html">СТАТЬИ</a>
                         <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
-                        
+
 
                     </nav>
                 </div>
@@ -100,7 +100,7 @@
                             <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
                             <a class="navbar__link" href="articles.html">СТАТЬИ</a>
                             <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
-                            
+
                         </nav>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
         </div>
     </div>
     <!--CHAIN-->
-
+    <p><a name="swip"></a></p>
     <!--SWIPER-->
     <div class="swiper">
         <div class="container">
@@ -152,7 +152,7 @@
                 <h2>Сатьи СТ Альянс </h2>
                 <p>Узучайте полузную информацию</p>
             </div>
-            <div class="swiper-container">
+            <div class="swiper-container" id="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
@@ -302,7 +302,7 @@
                                         <div class="infogallery__text d-flex">
                                             <div class="info-wrap">
                                                 <h2 class="card__title">
-                                                    SECOND
+                                                    FIRST
                                                 </h2>
                                                 <p class="card__text">
                                                     Стоимость работ рассчитывается индивидуально
@@ -318,6 +318,7 @@
                             <!-- END ITEM -->
                         </div>
                     </div>
+
                     <div class="swiper-slide">
                         <div class="infogallery__inner d-flex">
                             <!-- ITEM -->
@@ -401,24 +402,22 @@
                     </div>
                 </div>
                 <!-- If we need pagination -->
-                <div class="navigation-wrap">
-                    <div class="swiper-pagination " onclick="currentSlide()"></div>
+                <div class="navigation-wrap d-flex">
+                    <div class="arrow-box">
 
-                    <!-- If we need navigation buttons -->
-                    <div class="arrows-wrap">
-                        <div class="arrow-box">
-                            <div class="left-arrows-wrap disabled" id="left-arrows" onclick="mySwiper.slideTo(0);">
+                        <div class="swiper-pagination-container">
+                            <div class="left-arrows-wrap disabled" id="left-arrows"
+                                onclick="mySwiper.slideTo(0);scrollToSwiper();">
                                 <div class="swiper-button-first ">
                                 </div>
                                 <div class="swiper-button-second">
                                 </div>
                             </div>
-
-                            <div class="swiper-button-prev" id="button-prev"></div>
-                            <div class="swiper-button-next" id="button-next"></div>
-
+                            <div class="swiper-button-prev" id="button-prev" onclick="scrollToSwiper();"></div>
+                            <div class="swiper-pagination" onclick="scrollToSwiper();"> </div>
+                            <div class="swiper-button-next" id="button-next" onclick="scrollToSwiper();"></div>
                             <div class="right-arrows-wrap" id="right-arrows"
-                                onclick="mySwiper.slideTo(mySwiper.slides.length - 1);">
+                                onclick="mySwiper.slideTo(mySwiper.slides.length - 1);scrollToSwiper();">
                                 <div class="swiper-button-first">
                                 </div>
                                 <div class="swiper-button-second">
@@ -427,7 +426,6 @@
                         </div>
 
                     </div>
-
                 </div>
 
 
@@ -565,9 +563,10 @@
             pagination: {
                 el: '.swiper-pagination',
 
+
                 clickable: true,
                 renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
                 },
             },
 
@@ -576,15 +575,6 @@
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-            themeColor: '#ffffff',
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>';
             },
 
 

@@ -120,3 +120,8 @@ function currentSlide() {
 		document.getElementById("right-arrows").classList.remove("disabled");
 	}
 }
+var scrollToElement = document.getElementById("swiper");
+
+function scrollToSwiper() {
+	scrollToElement.scrollIntoView({ block: "start", behavior: "smooth" });
+}

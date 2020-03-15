@@ -502,10 +502,19 @@ a {
 	font-size: 15px;
 	opacity: 1;
 }
+.form__input:focus::-webkit-input-placeholder {
+	opacity: 0.6;
+}
+.form__input:focus::-moz-placeholder {
+	opacity: 0.6;
+}
+.open .current {
+	opacity: 0.6;
+}
 
 .form__input {
 	padding: 15px 30px;
-	transition: border-bottom-color 0.2s linear;
+	transition: border-bottom-color 0.1s linear;
 }
 
 .form__select {
@@ -551,6 +560,10 @@ a {
 	cursor: pointer;
 	margin: 8px;
 }
+.nice-select:active,
+.nice-select.open {
+	border-color: rgba(255, 255, 255, 0.3);
+}
 .form__input,
 .form__button {
 	width: 100%;
@@ -568,7 +581,7 @@ a {
 	outline: none;
 }
 .form__input:focus {
-	border-bottom-color: #999;
+	border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
 .form__button {
@@ -703,8 +716,8 @@ a {
 	position: absolute;
 	right: 23px;
 	top: 23px;
-	width: 23px;
-	height: 23px;
+	width: 15px;
+	height: 15px;
 	opacity: 0.3;
 }
 
@@ -717,7 +730,7 @@ a {
 	position: absolute;
 	left: 10px;
 	content: " ";
-	height: 20px;
+	height: 19px;
 	width: 2px;
 	background-color: #333;
 }
@@ -789,6 +802,7 @@ div.tender-active {
 .popup-window__form label {
 	color: #1b1a22;
 	width: 280px;
+	margin: 27px 0 21px;
 }
 .popup-window__form .form__input::placeholder {
 	color: black;
@@ -798,11 +812,15 @@ div.tender-active {
 	background-color: white;
 	color: #1b1a22;
 	border-bottom: 1px solid #1b1a22;
+	margin: 4px 0 0;
+}
+.popup-window__form .form__input:focus {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .popup-window__form button {
 	color: black;
 	background-color: white;
-
+	margin: 23px 0 21px;
 	border: 1px solid black;
 }
 
@@ -812,37 +830,41 @@ div.tender-active {
 	width: 100%;
 	max-width: 226px;
 	height: 126px;
+	margin-top: 15px;
 	outline: none;
-	padding: 15px;
+	padding: 15px 30px;
 	resize: none;
 }
-.popup-window__form #about__tender:-moz-placeholder {
+#about__tender:-moz-placeholder {
 	color: black;
-	text-align: center;
 }
-.popup-window__form #about__tender::-moz-placeholder {
+#about__tender::-moz-placeholder {
 	color: black;
-	text-align: center;
 }
-.popup-window__form #about__tender:placeholder-shown {
+#about__tender:placeholder-shown {
 	color: black;
-	text-align: center;
 }
-.popup-window__form #about__tender::-webkit-input-placeholder {
+#about__tender::placeholder {
 	color: black;
-	text-align: center;
+	opacity: 1;
 }
-.popup-window__form #about__tender:-ms-input-placeholder {
-	color: black;
-	text-align: center;
+#about__tender:focus::placeholder {
+	opacity: 0.5;
 }
-.popup-window__form #about__tender::placeholder {
+
+#about__tender::-webkit-input-placeholder {
 	color: black;
-	text-align: center;
+}
+#about__tender:-ms-input-placeholder {
+	color: black;
+}
+#about__tender::placeholder {
+	color: black;
 }
 
 .popup-window__form p {
 	color: black;
+	margin-top: 0;
 }
 .tender__message {
 	margin: 0px;
@@ -1165,6 +1187,8 @@ div.responsive {
 	font-variant: initial;
 }
 .navigation-wrap {
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	height: 130px;
 }
@@ -1172,10 +1196,11 @@ div.responsive {
 .left-arrows-wrap {
 	position: absolute;
 	top: calc((100% - 20px) / 2);
-	left: 0;
+	left: -40px;
 	height: 20px;
 	width: 10px;
 	cursor: pointer;
+	z-index: 10;
 }
 
 .left-arrows-wrap .swiper-button-first {
@@ -1201,10 +1226,11 @@ div.responsive {
 .right-arrows-wrap {
 	position: absolute;
 	top: calc((100% - 20px) / 2);
-	right: 0;
+	right: -40px;
 	height: 20px;
 	width: 10px;
 	cursor: pointer;
+	z-index: 10;
 }
 
 .right-arrows-wrap .swiper-button-first {
@@ -1234,9 +1260,11 @@ div.responsive {
 }
 
 .swiper-pagination {
-	position: absolute;
-	bottom: calc((100% - 36px) / 2);
-	left: calc((100% - 138px) / 2);
+	position: unset;
+}
+.swiper-pagination-container {
+	position: relative;
+	width: max-content;
 }
 
 .swiper-pagination-bullet {
@@ -1249,6 +1277,10 @@ div.responsive {
 	color: #fff !important;
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid #fff !important;
+	transition: 0.1s linear;
+}
+.swiper-pagination-bullet:hover {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 .swiper-pagination-bullet-active {
 	color: black !important;
@@ -1256,11 +1288,11 @@ div.responsive {
 }
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-	left: 20px;
+	left: -20px;
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-	right: 20px;
+	right: -20px;
 }
 .arrows-wrap {
 	position: absolute;
@@ -1270,10 +1302,8 @@ div.responsive {
 	bottom: calc((100% - 36px) / 2);
 }
 .arrow-box {
-	position: relative;
-	height: 130px;
-	left: calc((100% - 220px) / 2);
-	width: 220px;
+	width: max-content;
+	height: max-content;
 }
 .article__header h2 {
 	text-align: center;
