@@ -1462,8 +1462,20 @@ div.responsive {
 		width: 475px;
 		height: 347px;
 	}
+	.projects__hover {
+		padding: 45px 5px;
+	}
 }
 
+@media screen and (max-width: 955px) {
+	.projects__bigimage {
+		height: 347px;
+		position: relative;
+	}
+	.projects__wrap .projects__card {
+		width: 100%;
+	}
+}
 @media screen and (max-width: 855px) {
 	.contacts__container {
 		padding: 0 15px;
@@ -1535,10 +1547,6 @@ div.responsive {
 	}
 	.projects__hover .card__text {
 		margin-top: 6px;
-	}
-	.projects__card {
-		width: 475px;
-		height: 215px;
 	}
 
 	.projects__hover .card__title {
