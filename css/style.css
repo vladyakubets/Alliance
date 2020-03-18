@@ -45,7 +45,12 @@ a {
 }
 
 /*--------------------------HEADER------------------------------------------------------------*/
-
+.header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+}
 .header__logo {
 	margin-right: 49px;
 	height: 33px;
@@ -213,6 +218,9 @@ a {
 .title__inner {
 	border: 1px solid #dddddd;
 	padding: 0 10px;
+}
+.title {
+	margin-top: 80px;
 }
 /*---------------------TITLE END----------------------------------------------------*/
 /*---------------------Gallery-----------------------------------------------------*/
@@ -953,6 +961,7 @@ div.responsive {
 --------------------------------------------------------------*/
 
 .header-wrap {
+	z-index: -4;
 	position: relative;
 	height: 600px;
 	background: url("../images/service/header_image.jpg") center no-repeat;
